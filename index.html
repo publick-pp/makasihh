@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>makacihh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <h2 style="color: rgb(254, 253, 254);">siapa nama bapak mu</h2>
+        <input type="text" id="pw" placeholder="masukan bapak mu">
+        <button type="submit" id="jawab">jawab</button>
+    </div>
+    <script>
+        const pww = document.getElementById('pw');
+        const jawab = document.getElementById('jawab');
+        jawab.addEventListener('click', function() {
+            if (pww.value === 'tatang' || pww.value === 'Tatang') {
+                window.location.href = 'new.html';
+            } else {
+                alert('Password salah, coba lagi.');
+            }
+        });
+    </script>
+</body>
+</html>

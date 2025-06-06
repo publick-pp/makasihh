@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        h1 {
+            text-align: center;
+            font-size: 200%;
+            color: #ffffff;
+        }
+        p {
+            text-align: center;
+            font-size:100%;
+            color: #f5f4f4;
+            margin: 20px;
+        }
+        p:hover {
+            color: #f50944;
+            font-size: 110%;
+            transition: color 0.3s ease , font-size 0.3s ease;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .love {
+            position: fixed;
+            font-size: 32px;
+            pointer-events: none;
+            animation: float 2s linear forwards;
+            z-index: 9999;
+        }
+        @keyframes float {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(1.8) rotate(30deg);
+            }
+        }
+        .animated-up {
+            animation: slideUp 1s cubic-bezier(.25,1.25,.5,1) both;
+        }
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(100px) scale(0.95);
+            }
+            80% {
+                opacity: 1;
+                transform: translateY(-10px) scale(1.02);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .container {
+            max-width: 400px;
+            width: 90vw;
+            margin: 0 auto;
+        }
+        .card {
+            width: 100%;
+            box-sizing: border-box;
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 120%;
+            }
+            .card {
+                padding: 16px 8px;
+                min-width: unset;
+            }
+            p {
+                font-size: 80%;
+            }
+            p:hover {
+                font-size: 90%;
+            }
+            button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card animated-up">
+            <h1>makacihh gitaaa</h1>
+            <p>makasih udaa bantu akuu dalam segala hall <br>bantuu akuu nabung,<br>bantu akuu ngerjain tusaas
+                dll semoga kitaa trus selalu bersamaa <br> semoga kitaa bisaa selalu saling tolong menolong dalam kondisi apapun okeyyy 
+                <br>
+                <br>
+                pokokk nyaaa jangan tinggalin aku yaaa akuuu harapp kitaa bisaa bersamaa truss
+            </p>
+        </div>
+        <div class="card animated-up">
+            <button id="btn">coba tekan</button>
+        </div>
+    </div>
+    <audio id="loveSound" src="audio.mp3"></audio>
+    <script>
+        const btn = document.getElementById('btn');
+        const loveSound = document.getElementById('loveSound');
+        btn.addEventListener('click', () => {
+            // Play sound
+            loveSound.currentTime = 0;
+            loveSound.play();
+
+            // Generate many hearts
+            for (let i = 0; i < 30; i++) {
+                createLove();
+            }
+        });
+
+        function createLove() {
+            const love = document.createElement('div');
+            love.className = 'love';
+            love.innerHTML = '❤️';
+
+            // Random position
+            love.style.left = Math.random() * 90 + 5 + 'vw';
+            love.style.top = (Math.random() * 60 + 20) + 'vh';
+            love.style.fontSize = (Math.random() * 30 + 24) + 'px';
+            love.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+            document.body.appendChild(love);
+
+            setTimeout(() => {
+                love.remove();
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

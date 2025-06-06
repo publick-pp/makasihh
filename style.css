@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #f5f5f5;
+    font-style: italic;
+}
+
+.card {
+    padding: 32px 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    background: linear-gradient(135deg, #ff0044, #e0dedd);
+}
+
+.card input[type="text"] {
+    padding: 10px;
+    margin-top: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+.card button {
+    margin-top: 16px;
+    padding: 10px 20px;
+    background-color: #ff0044ae;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #ff0044;
+    font-size: 20px;
+    padding: 15px 25px;
+    transition: background-color 0.3s ease, font-size 0.3s ease , padding 0.3s ease;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0 4vw;
+    }
+    .card {
+        padding: 16px 8px;
+        min-width: unset;
+        width: 100%;
+    }
+    h1, h2 {
+        font-size: 20px !important;
+        text-align: center;
+    }
+    p {
+        font-size: 14px !important;
+    }
+    .card input[type="text"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .card button {
+        font-size: 14px;
+        padding: 8px 12px;
+        width: 30%;
+    }
+}
